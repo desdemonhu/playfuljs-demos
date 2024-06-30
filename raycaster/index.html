@@ -5,7 +5,10 @@
     <title>Raycaster Demo - PlayfulJS</title>
   </head>
   <body style='background: #000; margin: 0; padding: 0; width: 100%; height: 100%;'>
-    <canvas id='display' width='1' height='1' style='width: 100%; height: 100%;' />
+    <div>
+      <button><a href="../pointClick/index.html">to Point and Click</a></button>
+    </div>
+    <canvas id='display' width='1' height='1' style='width: 100%; height: 100%;' >
 
     <script>
 
@@ -242,11 +245,17 @@
         }; 
       };
 
+      //// Button to go to pointClick Index.html
+      function GoToPointClick(){
+        this.name = 'Point and Click';
+
+      };
+
       function GameLoop() {
         this.frame = this.frame.bind(this);
         this.lastTime = 0;
         this.callback = function() {};
-      }
+      };
 
       GameLoop.prototype.start = function(callback) {
         this.callback = callback;
@@ -274,7 +283,7 @@
         player.update(controls.states, map, seconds);
         camera.render(player, map);
       });
-      
+
     </script>
     <!-- <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

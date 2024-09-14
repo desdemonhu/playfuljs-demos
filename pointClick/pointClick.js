@@ -1,5 +1,4 @@
 // game.js
-// Version 0.10
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -86,7 +85,6 @@ const stateMachine = {
     'clear': 'clear'
 }
 
-
 function changeState (currentState){
     console.log('currentState == ', currentState);
     switch (currentState) {
@@ -111,6 +109,6 @@ function onStart () {
 }
 
 ////// State Functions - END //////
-
+console.info('version', .11);
 draw();
 changeState('start');

@@ -1,5 +1,5 @@
 // game.js
-// Version 0.5
+// Version 0.6
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -68,7 +68,7 @@ addObject(0,0,800,600, '../assets/asset_bg-room.png', () =>{
 
 ////// Example of adding objects //////
 /// TODO: set x and y of btn to a portion of the 'bg-lab' object
-addObject(180, 150, 50, 50, '../assets/asset_bg-button.png', () => {
+addObject(180, 200, 50, 50, '../assets/asset_bg-button.png', () => {
     console.log('Demo-Inventory-Item clicked');
     addItemToInventory('Demo-Inventory-Item');
 });

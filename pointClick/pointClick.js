@@ -1,4 +1,5 @@
 // game.js
+// Version 0.1
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -58,6 +59,11 @@ function addItemToInventory(item) {
     inventoryDiv.appendChild(itemDiv);
 }
 
+// Backgrounds
+addObject(0,0,1000,1000, '../assets/asset_bg-room.png', () =>{
+    console.log('Background Image loaded')
+})
+
 // Example of adding objects
 addObject(100, 100, 50, 50, '../assets/asset_bg-button.png', () => {
     console.log('Object 1 clicked');
@@ -68,5 +74,4 @@ addObject(200, 200, 50, 50, '../assets/asset_bg-room.png', () => {
     addItemToInventory('Demo-Background');
 });
 
-///V1
 draw();

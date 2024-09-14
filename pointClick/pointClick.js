@@ -1,5 +1,5 @@
 // game.js
-// Version 0.1
+// Version 0.2
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -60,18 +60,15 @@ function addItemToInventory(item) {
 }
 
 // Backgrounds
-addObject(0,0,1000,1000, '../assets/asset_bg-room.png', () =>{
-    console.log('Background Image loaded')
+addObject(0,0,800,600, '../assets/asset_bg-room.png', () =>{
+    console.log('Background Image loaded') /// TODO: set width and height dynamically based on index.html
 })
 
 // Example of adding objects
 addObject(100, 100, 50, 50, '../assets/asset_bg-button.png', () => {
-    console.log('Object 1 clicked');
-    addItemToInventory('Demo-Key');
+    console.log('Demo-Inventory-Item clicked');
+    addItemToInventory('Demo-Inventory-Item');
 });
-addObject(200, 200, 50, 50, '../assets/asset_bg-room.png', () => {
-    console.log('Object 2 clicked');
-    addItemToInventory('Demo-Background');
-});
+
 
 draw();

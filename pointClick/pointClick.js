@@ -87,7 +87,6 @@ const stateMachine = {
 
 // Handle State change
 function changeState (currentState){
-    console.log('currentState == ', currentState);
     switch (currentState) {
         case 'none':
             break;

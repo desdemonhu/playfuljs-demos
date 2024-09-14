@@ -85,20 +85,19 @@ const stateMachine = {
     'clear': 'clear'
 }
 
+// Handle State change
 function changeState (currentState){
     console.log('currentState == ', currentState);
     switch (currentState) {
         case 'none':
-            console.log('is current state none?: ', currentState)
             break;
         case 'start':
-            console.log('currentState is: ', currentState);
             stateMachine['start'];
             break;
         default:
-            console.log('what is current state?: ', currentState)
             break;
-    }   
+    }
+    console.log('currentState is: ', currentState);
 }
 
 ////// State Functions - START //////
@@ -109,6 +108,6 @@ function onStart () {
 }
 
 ////// State Functions - END //////
-console.info('version', .11);
+console.info('version', .12);
 draw();
 changeState('start');

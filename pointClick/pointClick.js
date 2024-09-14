@@ -1,5 +1,5 @@
 // game.js
-// Version 0.9
+// Version 0.10
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -75,16 +75,17 @@ addObject(180, 200, 50, 50, '../assets/asset_bg-button.png', () => {
 
 /// TODO: Make all scene objects
 /// TODO: Object actions/ state flags
-const stateMachine = [
-    'none',
-    'start',
-    'end',
-    'success',
-    'defeat',
-    'investigation',
-    'action',
-    'clear'
-];
+const stateMachine = {
+    'none': 'none',
+    'start': onStart,
+    'end': 'end',
+    'success': 'success',
+    'defeat': 'defeat',
+    'investigation': 'investigation',
+    'action': 'action',
+    'clear': 'clear'
+}
+
 
 function changeState (currentState){
     console.log('currentState == ', currentState);
@@ -92,13 +93,24 @@ function changeState (currentState){
         case 'none':
             console.log('is current state none?: ', currentState)
             break;
-    
+        case 'start':
+            console.log('currentState is: ', currentState);
+            stateMachine['start'];
+            break;
         default:
             console.log('what is current state?: ', currentState)
             break;
     }   
 }
 
+////// State Functions - START //////
+
+// stateMachine['start']:
+function onStart () {
+    console.log('in onStart!');
+}
+
+////// State Functions - END //////
 
 draw();
-changeState('none');
+changeState('start');

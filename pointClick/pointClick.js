@@ -89,7 +89,7 @@ const stateMachine = [
 function changeState (currentState){
     console.log('currentState == ', currentState);
     switch (currentState) {
-        case stateMachine['none']:
+        case 'none':
             console.log('is current state none?: ', currentState)
             break;
     

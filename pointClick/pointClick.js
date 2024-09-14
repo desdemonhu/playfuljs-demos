@@ -92,7 +92,7 @@ function changeState (currentState){
         case 'none':
             break;
         case 'start':
-            stateMachine['start'];
+            stateMachine['start']();
             break;
         default:
             break;
@@ -108,6 +108,6 @@ function onStart () {
 }
 
 ////// State Functions - END //////
-console.info('version', .12);
+console.info('version', .13);
 draw();
 changeState('start');

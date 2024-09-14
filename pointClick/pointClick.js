@@ -1,5 +1,5 @@
 // game.js
-// Version 0.7
+// Version 0.8
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -88,7 +88,7 @@ const stateMachine = [
 
 function changeState (currentState){
 
-    if (length(currentState) > 0){
+    if (currentState.count > 0){
         console.log('currentState == ', currentState);
         switch (currentState) {
             case stateMachine['none']:

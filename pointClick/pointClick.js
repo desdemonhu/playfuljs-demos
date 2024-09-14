@@ -96,6 +96,7 @@ function changeState (currentState){
                 break;
         
             default:
+                console.log('what is current state?: ', currentState)
                 break;
         }
     }    

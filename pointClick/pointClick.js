@@ -59,11 +59,11 @@ function addItemToInventory(item) {
 }
 
 // Example of adding objects
-addObject(100, 100, 50, 50, 'path/to/image1.png', () => {
+addObject(100, 100, 50, 50, '../assets/asset_bg-button.png', () => {
     console.log('Object 1 clicked');
     addItemToInventory('Key');
 });
-addObject(200, 200, 50, 50, 'path/to/image2.png', () => {
+addObject(200, 200, 50, 50, '../assets/asset_bg-room.png', () => {
     console.log('Object 2 clicked');
 });
 

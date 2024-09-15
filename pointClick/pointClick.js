@@ -5,6 +5,11 @@ const ctx = canvas.getContext('2d');
 let gameObjects = [];
 let inventory = [];
 
+////// DIALOUGE - START //////
+const dlog_onStart = 'This is the dlog that loads on game start';
+
+////// DIALOUGE - END //////
+
 class GameObject {
     constructor(x, y, width, height, imageSrc, onClick) {
         this.x = x;
@@ -96,24 +101,20 @@ function changeState (currentState){
         default:
             break;
     }
-    console.log('currentState is: ', currentState);
+    console.log('currentState is:', currentState);
 }
 
 ////// State Functions - START //////
 
 // stateMachine['start']:
 function onStart () {
-    console.log('in onStart! ', dlog_onStart);
+    console.log('in onStart: ', dlog_onStart);
 }
 
 ////// State Functions - END //////
 
-////// DIALOUGE - START //////
-const dlog_onStart = 'This is the dlog that loads on game start';
-
-////// DIALOUGE - END //////
 
 ///// onLoad //////
-console.info('version', .13);
+console.info('version', .14);
 draw();
 changeState('start');

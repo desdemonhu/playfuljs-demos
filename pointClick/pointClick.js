@@ -103,10 +103,17 @@ function changeState (currentState){
 
 // stateMachine['start']:
 function onStart () {
-    console.log('in onStart!');
+    console.log('in onStart! ', dlog_onStart);
 }
 
 ////// State Functions - END //////
+
+////// DIALOUGE - START //////
+const dlog_onStart = 'This is the dlog that loads on game start';
+
+////// DIALOUGE - END //////
+
+///// onLoad //////
 console.info('version', .13);
 draw();
 changeState('start');

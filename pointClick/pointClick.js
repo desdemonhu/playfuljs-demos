@@ -129,6 +129,6 @@ function onStart () {
 
 
 ///// onLoad //////
-console.info('version', .16);
+console.info('version', .17);
 draw();
 changeState('start');

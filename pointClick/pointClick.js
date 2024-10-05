@@ -7,6 +7,8 @@ let inventory = [];
 
 ////// DIALOUGE - START //////
 const dlog_onStart = 'This is the dlog that loads on game start';
+const dlog_mirror_onClick = 'This is when you click on the mirror';
+
 
 ////// DIALOUGE - END //////
 
@@ -115,6 +117,6 @@ function onStart () {
 
 
 ///// onLoad //////
-console.info('version', .14);
+console.info('version', .15);
 draw();
 changeState('start');

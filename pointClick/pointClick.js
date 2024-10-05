@@ -39,17 +39,21 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
-canvas.addEventListener('click', (event) => {
-    const rect = canvas.getBoundingClientRect();
-    const mouseX = event.clientX - rect.left;
-    const mouseY = event.clientY - rect.top;
-    
-    gameObjects.forEach(object => {
-        if (object.isClicked(mouseX, mouseY)) {
-            object.onClick();
-        }
+function loadEventListener() {
+    canvas.addEventListener('click', (event) => {
+        const rect = canvas.getBoundingClientRect();
+        const mouseX = event.clientX - rect.left;
+        const mouseY = event.clientY - rect.top;
+        
+        gameObjects.forEach(object => {
+            if (object.isClicked(mouseX, mouseY)) {
+                object.onClick();
+            }
+        });
     });
-});
+}
+
+
 
 function addObject(x, y, width, height, imageSrc, onClick) {
     const gameObject = new GameObject(x, y, width, height, imageSrc, onClick);
@@ -115,8 +119,10 @@ function changeState (currentState){
 // stateMachine['start']:
 function onStart () {
     console.log('in onStart: ', dlog_onStart);
-    loadBackgrounds();
-    loadInteractives();
+    loadEventListener();
+    // loadBackgrounds();
+    // loadInteractives();
+
 }
 
 ////// State Functions - END //////

@@ -79,6 +79,7 @@ function loadBackgrounds() {
 }
 
 //https://desdemonhu.github.io/playfuljs-demos/pointClick/pointClick.js
+// pointClick\assets
 
 function loadInteractives() {
     ////// Example of adding objects //////
@@ -123,7 +124,7 @@ function onStart () {
     console.log('in onStart: ', dlog_onStart);
     loadEventListener();
     loadBackgrounds();
-    loadInteractives();
+    // loadInteractives();
 
 }
 
@@ -131,6 +132,6 @@ function onStart () {
 
 
 ///// onLoad //////
-console.info('version', 1.5);
+console.info('version', 1.6);
 draw();
 changeState('start');

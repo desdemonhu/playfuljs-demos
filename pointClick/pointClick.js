@@ -73,7 +73,7 @@ function addItemToInventory(item) {
 
 /// TODO: set width and height dynamically based on index.html
 function loadBackgrounds() {
-    addObject(0,0,800,600, '.\assets\asset_bg-room.png', () =>{
+    addObject(0,0,800,600, 'assets\asset_bg-room.png', () =>{
         console.log('Background Image loaded') ;
     })    
 }
@@ -129,6 +129,6 @@ function onStart () {
 
 
 ///// onLoad //////
-console.info('version', 1.3);
+console.info('version', 1.4);
 draw();
 changeState('start');

@@ -72,19 +72,17 @@ function addItemToInventory(item) {
 ////// Backgrounds //////
 
 /// TODO: set width and height dynamically based on index.html
+/// Correct formatting
 function loadBackgrounds() {
     addObject(0,0,800,600, './assets/asset_bg-room.png', () =>{
         console.log('Background Image loaded') ;
     })    
 }
 
-//https://desdemonhu.github.io/playfuljs-demos/pointClick/pointClick.js
-// pointClick\assets
-
 function loadInteractives() {
     ////// Example of adding objects //////
 /// TODO: set x and y of btn to a portion of the 'bg-lab' object
-addObject(180, 200, 50, 50, '../assets/asset_bg-button.png', () => {
+addObject(180, 200, 50, 50, './assets/asset_bg-button.png', () => {
     console.log('Demo-Inventory-Item clicked');
     addItemToInventory('Demo-Inventory-Item');
 });
@@ -124,7 +122,7 @@ function onStart () {
     console.log('in onStart: ', dlog_onStart);
     loadEventListener();
     loadBackgrounds();
-    // loadInteractives();
+    loadInteractives();
 
 }
 
@@ -132,6 +130,6 @@ function onStart () {
 
 
 ///// onLoad //////
-console.info('version', 1.8);
+console.info('version', 2.0);
 draw();
 changeState('start');

@@ -83,7 +83,7 @@ function loadInteractives() {
     ////// Example of adding objects //////
 /// TODO: set x and y of btn to a portion of the 'bg-lab' object
 addObject(180, 200, 50, 50, './assets/asset_bg-button.png', () => {
-    console.log('Demo-Inventory-Item clicked');
+    console.log(dlog_mirror_onClick);
     addItemToInventory('Demo-Inventory-Item');
 });
 }

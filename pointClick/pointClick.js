@@ -81,7 +81,7 @@ function loadBackgrounds() {
 function loadInteractives() {
     ////// Example of adding objects //////
 /// TODO: set x and y of btn to a portion of the 'bg-lab' object
-addObject(180, 200, 50, 50, '../assets/asset_bg-button.png', () => {
+addObject(180, 200, 50, 50, '.\assets\Wiccan-Book-Realistic.png', () => {
     console.log('Demo-Inventory-Item clicked');
     addItemToInventory('Demo-Inventory-Item');
 });
@@ -129,6 +129,6 @@ function onStart () {
 
 
 ///// onLoad //////
-console.info('version', .17);
+console.info('version', .18);
 draw();
 changeState('start');

@@ -61,6 +61,7 @@ function addObject(x, y, width, height, imageSrc, onClick) {
     gameObjects.push(gameObject);
 }
 
+/// TODO: Once added to inventory disable onclick for interactive
 function addItemToInventory(item) {
     inventory.push(item);
     const inventoryDiv = document.getElementById('inventory');

@@ -120,8 +120,8 @@ function changeState (currentState){
 function onStart () {
     console.log('in onStart: ', dlog_onStart);
     loadEventListener();
-    // loadBackgrounds();
-    // loadInteractives();
+    loadBackgrounds();
+    loadInteractives();
 
 }
 

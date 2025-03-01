@@ -73,10 +73,12 @@ function addItemToInventory(item) {
 
 /// TODO: set width and height dynamically based on index.html
 function loadBackgrounds() {
-    addObject(0,0,800,600, 'assets\asset_bg-room.png', () =>{
+    addObject(0,0,800,600, '.\pointClick\assets\asset_bg-room.png', () =>{
         console.log('Background Image loaded') ;
     })    
 }
+
+//https://desdemonhu.github.io/playfuljs-demos/pointClick/pointClick.js
 
 function loadInteractives() {
     ////// Example of adding objects //////

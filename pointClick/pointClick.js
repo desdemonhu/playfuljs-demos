@@ -5,6 +5,13 @@ const ctx = canvas.getContext('2d');
 let gameObjects = [];
 let inventory = [];
 
+////// DIALOUGE - START //////
+const dlog_onStart = 'This is the dlog that loads on game start';
+const dlog_mirror_onClick = 'This is when you click on the mirror';
+
+
+////// DIALOUGE - END //////
+
 class GameObject {
     constructor(x, y, width, height, imageSrc, onClick) {
         this.x = x;
@@ -33,17 +40,21 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
-canvas.addEventListener('click', (event) => {
-    const rect = canvas.getBoundingClientRect();
-    const mouseX = event.clientX - rect.left;
-    const mouseY = event.clientY - rect.top;
-    
-    gameObjects.forEach(object => {
-        if (object.isClicked(mouseX, mouseY)) {
-            object.onClick();
-        }
+function loadEventListener() {
+    canvas.addEventListener('click', (event) => {
+        const rect = canvas.getBoundingClientRect();
+        const mouseX = event.clientX - rect.left;
+        const mouseY = event.clientY - rect.top;
+        
+        gameObjects.forEach(object => {
+            if (object.isClicked(mouseX, mouseY)) {
+                object.onClick();
+            }
+        });
     });
-});
+}
+
+
 
 function addObject(x, y, width, height, imageSrc, onClick) {
     const gameObject = new GameObject(x, y, width, height, imageSrc, onClick);
@@ -59,13 +70,66 @@ function addItemToInventory(item) {
     inventoryDiv.appendChild(itemDiv);
 }
 
-// Example of adding objects
-addObject(100, 100, 50, 50, '.\assets\Wiccan-Book-Realistic.png', () => {
-    console.log('Object 1 clicked');
-    addItemToInventory('Key');
-});
-addObject(200, 200, 50, 50, '.\assets\\40959991474_2e3d23c436_o-2.jpg', () => {
-    console.log('Object 2 clicked');
-});
+////// Backgrounds //////
 
+/// TODO: set width and height dynamically based on index.html
+function loadBackgrounds() {
+    addObject(0,0,800,600, '../assets/asset_bg-room.png', () =>{
+        console.log('Background Image loaded') ;
+    })    
+}
+
+function loadInteractives() {
+    ////// Example of adding objects //////
+/// TODO: set x and y of btn to a portion of the 'bg-lab' object
+addObject(180, 200, 50, 50, '../assets/asset_bg-button.png', () => {
+    console.log('Demo-Inventory-Item clicked');
+    addItemToInventory('Demo-Inventory-Item');
+});
+}
+
+/// TODO: Make all scene objects
+/// TODO: Object actions/ state flags
+const stateMachine = {
+    'none': 'none',
+    'start': onStart,
+    'end': 'end',
+    'success': 'success',
+    'defeat': 'defeat',
+    'investigation': 'investigation',
+    'action': 'action',
+    'clear': 'clear'
+}
+
+// Handle State change
+function changeState (currentState){
+    switch (currentState) {
+        case 'none':
+            break;
+        case 'start':
+            stateMachine['start']();
+            break;
+        default:
+            break;
+    }
+    console.log('currentState is:', currentState);
+}
+
+////// State Functions - START //////
+
+// stateMachine['start']:
+function onStart () {
+    console.log('in onStart: ', dlog_onStart);
+    loadEventListener();
+    // loadBackgrounds();
+    // loadInteractives();
+
+}
+
+////// State Functions - END //////
+
+
+///// onLoad //////
+console.info('version', .17);
 draw();
+changeState('start');

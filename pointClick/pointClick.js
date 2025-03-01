@@ -27,6 +27,7 @@ class GameObject {
 }
 
 function draw() {
+    alert('Hello!');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     gameObjects.forEach(object => object.draw());
     requestAnimationFrame(draw);

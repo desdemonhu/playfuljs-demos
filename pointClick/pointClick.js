@@ -73,7 +73,7 @@ function addItemToInventory(item) {
 
 /// TODO: set width and height dynamically based on index.html
 function loadBackgrounds() {
-    addObject(0,0,800,600, '..\assets\asset_bg-room.png', () =>{
+    addObject(0,0,800,600, '../assets/asset_bg-room.png', () =>{
         console.log('Background Image loaded') ;
     })    
 }
@@ -81,7 +81,7 @@ function loadBackgrounds() {
 function loadInteractives() {
     ////// Example of adding objects //////
 /// TODO: set x and y of btn to a portion of the 'bg-lab' object
-addObject(180, 200, 50, 50, '..\assets\asset_bg-button.png', () => {
+addObject(180, 200, 50, 50, '../assets/asset_bg-button.png', () => {
     console.log('Demo-Inventory-Item clicked');
     addItemToInventory('Demo-Inventory-Item');
 });

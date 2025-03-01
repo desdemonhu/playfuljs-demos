@@ -4,6 +4,7 @@ const ctx = canvas.getContext('2d');
 
 let gameObjects = [];
 let inventory = [];
+let version = '1.0.0'
 
 ////// DIALOUGE - START //////
 const dlog_onStart = 'This is the dlog that loads on game start';
@@ -75,7 +76,7 @@ function addItemToInventory(item) {
 /// Correct formatting
 function loadBackgrounds() {
     addObject(0,0,800,600, './assets/asset_bg-room.png', () =>{
-        console.log('Background Image loaded') ;
+        // console.log('Background Image loaded') ;
     })    
 }
 
@@ -128,8 +129,7 @@ function onStart () {
 
 ////// State Functions - END //////
 
-
 ///// onLoad //////
-console.info('version', 2.0);
+console.info('version', version);
 draw();
 changeState('start');

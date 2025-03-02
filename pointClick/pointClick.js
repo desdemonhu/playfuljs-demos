@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 
 let gameObjects = [];
 let inventory = [];
-let version = '1.2.5'
+let version = '1.2.6'
 
 ////// DIALOUGE - START //////
 const dlog_onStart = 'This is the dlog that loads on game start';
@@ -34,7 +34,7 @@ class GameObject {
     }
 
     removeOnClick(inventoryObj) {
-        inventoryObj.removeEventListener('click', this.removeOnClick); ///Trying to disable button as method
+        inventoryObj.removeEventListener('click', removeOnClick); ///Trying to disable button as method
     }
 }
 

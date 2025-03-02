@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 
 let gameObjects = [];
 let inventory = [];
-let version = '1.3.4'
+let version = '1.4.0'
 
 ////// DIALOUGE - START //////
 const dlog_onStart = 'This is the dlog that loads on game start';
@@ -25,7 +25,7 @@ class GameObject {
     }
 
     draw() {
-        ctx.drawImage(this.image, this.x, this.y, this.width, this.height,handleOnClick);
+        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
 
     isClicked(mouseX, mouseY) {
@@ -41,10 +41,6 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
-function handleOnClick() {
-    console.log('In onClick Click'); /// test overloading onClick
-}
-
 function loadEventListener() {
     canvas.addEventListener('click', (event) => {
         const rect = canvas.getBoundingClientRect();
@@ -58,8 +54,6 @@ function loadEventListener() {
         });
     });
 }
-
-
 
 function addObject(x, y, width, height, imageSrc, onClick) {
     const gameObject = new GameObject(x, y, width, height, imageSrc, onClick);

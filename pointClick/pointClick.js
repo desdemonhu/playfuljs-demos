@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 
 let gameObjects = [];
 let inventory = [];
-let version = '1.2.3'
+let version = '1.2.4'
 
 ////// DIALOUGE - START //////
 const dlog_onStart = 'This is the dlog that loads on game start';
@@ -49,7 +49,7 @@ function loadEventListener() {
         gameObjects.forEach(object => {
             if (object.isClicked(mouseX, mouseY)) {
                 object.onClick();
-                this.disabled = true; //Trying to remove onClick after click - this causes uncaught error
+                object.removeEventListener('click',loadEventListener) //Trying to remove onClick after click - this causes uncaught error
             }
         });
     });

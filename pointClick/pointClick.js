@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 
 let gameObjects = [];
 let inventory = [];
-let version = '1.3.0'
+let version = '1.3.1'
 
 ////// DIALOUGE - START //////
 const dlog_onStart = 'This is the dlog that loads on game start';
@@ -21,7 +21,7 @@ class GameObject {
         this.height = height;
         this.image = new Image();
         this.image.src = imageSrc;
-        this.onClick = this.handleOnClick; /// this was just onClick before
+        this.onClick = handleOnClick; /// this was just onClick before
     }
 
     draw() {
@@ -33,15 +33,16 @@ class GameObject {
                mouseY >= this.y && mouseY <= this.y + this.height;
     }
 
-    handleOnClick() {
-        console.log('In onClick Click'); /// test overloading onClick
-    }
 }
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     gameObjects.forEach(object => object.draw());
     requestAnimationFrame(draw);
+}
+
+function handleOnClick() {
+    console.log('In onClick Click'); /// test overloading onClick
 }
 
 function loadEventListener() {

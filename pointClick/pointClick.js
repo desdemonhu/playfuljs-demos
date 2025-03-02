@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 
 let gameObjects = [];
 let inventory = [];
-let version = '1.0.0'
+let version = '1.1.0'
 
 ////// DIALOUGE - START //////
 const dlog_onStart = 'This is the dlog that loads on game start';
@@ -49,6 +49,7 @@ function loadEventListener() {
         gameObjects.forEach(object => {
             if (object.isClicked(mouseX, mouseY)) {
                 object.onClick();
+                object.removeEventListener('click',loadEventListener); //I ADDED
             }
         });
     });

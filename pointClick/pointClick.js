@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 
 let gameObjects = [];
 let inventory = [];
-let version = '1.3.1'
+let version = '1.3.3'
 
 ////// DIALOUGE - START //////
 const dlog_onStart = 'This is the dlog that loads on game start';
@@ -21,7 +21,7 @@ class GameObject {
         this.height = height;
         this.image = new Image();
         this.image.src = imageSrc;
-        this.onClick = handleOnClick; /// this was just onClick before
+        this.onClick = this.handleOnClick; /// this was just onClick before
     }
 
     draw() {
